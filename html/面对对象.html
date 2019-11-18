@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<META charset="UTF-8"/>
+<head>
+	<style>
+		table{
+			width:300px;
+			height:300px;
+			
+		}
+		td{
+			width:50px;
+			height:50px;
+			border:1px solid blue;
+			text-align:center;
+			line-height:50px;
+		}
+
+		.b{
+			
+			background:red;
+		}
+
+		div{
+			width:100px;
+			height:100px;
+			background:red;
+			margin:5px;
+		}
+	</style>
+	<script src = "js/jquery-1.3.2.min.js"></script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><input type='text'/></td>
+			<td><input type='checkbox'/></td>
+			<td><input type='radio' checked='true'/></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>8</td>
+			<td><img src='img/boy.jpg' width=50px height=50px></td>
+		</tr>
+	</table>
+	<hr/>
+	<input type = 'text'>
+	
+	<div></div>
+	<div></div>
+	<div></div>
+
+
+	
+</body> 
+	<script>
+		$('div').animate({'right':'0'},5000);
+		/*var obj = new Object;
+		//var obj = {};
+		obj.x = 100;
+		obj.y = 200;
+		console.log(obj);
+		delete obj.x;
+		console.log(obj);
+		var p = {p:obj,size:1};
+		console.log(p);
+		*/
+
+		/*function ComplexNumber(r,v){
+			this.r=r;
+			this.v=v;
+			this.plus=function(cn){
+				var r = this.r + cn.r;
+				var v = this.v + cn.v;
+				return new ComplexNumber(r,v);
+			}
+
+			this.minus=function(cn){
+			var r = this.r - cn.r;
+			var v = this.v - cn.v;
+			return new ComplexNumber(r,v);
+			}
+
+			this.toString = function(){
+				if(r == 0){
+					return v + "i";
+				}else if (v==0){
+					return r + "";
+				}else if(v < 0){	
+					return r + "" + v +"i";
+				}else{
+					return r + "+" + v +"i";
+				}				
+			}
+		}
+
+
+
+		ComplexNumber.prototype = {
+			hello:function(){
+				console.log(new Date().toLocaleString());
+			},
+
+			bye:function(){
+				console.log("bye!");
+			}
+			
+		}
+
+		var cn1 = new ComplexNumber(1,1);
+		var cn2 = new ComplexNumber(2,-3);
+		cn1.hello();
+		cn1.bye();
+		cn2.hello();
+		cn2.bye();
+		console.log(cn1.plus(cn2).toString());
+		*/
+/*
+		$('td').mouseover(function(){
+			this.style.backgoundColor = 'yellow';
+		});
+		$('td').mouseout(function(){
+			this.style.backgoundColor = 'white';
+		});
+*/		
+/*		$('body').find('td').hover(
+			function(){
+				$(this).next().css('background-color','purple');
+			},
+			function(){
+				$(this).next().css('background-color','white');
+			}
+		)
+*/		
+		//$('td').attr('a',1);
+
+		$('td').each(function(i,o){
+			$(this).attr('a',i);	
+		})
+
+		$('td[a=5]').dblclick(function(){
+			this.style.backgroundColor = 'blue' ;
+		})
+
+		$('td').hover(
+			function(i,o){
+				$(this).addClass('b');
+			},
+			function(i,o){
+				$(this).removeClass('b');
+			}		
+		);
+
+		$('td').click(
+			function(){
+				$(this).toggleClass('b');
+			}
+		)
+		
+		$('input:text').val('hello');
+		$('td[a=2]').text('hello12');
+		$('td[a=5]').html('hello123');
+		console.log($('td[a=5]').html());
+
+	</script>
+</html>

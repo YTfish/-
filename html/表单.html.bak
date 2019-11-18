@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<META charset="UTF-8"/>
+		<style>
+			table{
+				border:10px  solid black;
+				border-collapse:collapse;
+			}
+			tr{
+				width:400px;
+				height:50px;
+			}
+			td{
+				border:1px solid pink;
+				width:100px;
+				height:50px;
+			}
+		</style>	
+</head>
+	<script src = "js/util.js"></script>
+	
+<body>
+
+	<table>
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+
+	</table>
+		
+</body>
+
+	<script>
+		function singleColor(){
+			var c=Math.ceil(Math.random()*255);
+			var hex = '';
+			while(true){
+				var r = c % 16;
+				switch(r){
+					case 10: hex = 'A' + hex;
+					break;
+					case 11: hex = 'B' + hex;
+					break;
+					case 12: hex = 'C' + hex;
+					break;
+					case 13: hex = 'D' + hex;
+					break;
+					case 14: hex = 'E' + hex;
+					break;
+					case 15: hex = 'F' + hex;
+					break;
+					default:
+						hex = r + hex; 
+				}
+				c = Math.floor(c / 16) ;
+				if(c == 0){
+					break;
+				}
+			}
+			if(hex.length == 1){
+				hex = '0' + hex;
+			}
+			return hex;
+		}
+
+		function getRandColor(){
+			var r = singleColor();
+			var g = singleColor();
+			var b = singleColor();			
+			return '#'+ r + g + b;
+		}
+		
+	
+
+		for(var i = 0 ; i < 100 ; i++){
+			var hr = $('<hr>');
+			hr.color = getRandColor();
+			$('body')[0].appendChild(hr);
+		}
+	</script>
+
+	<script> 
+
+
+			var trs =$('<tr>');
+			console.log(trs.length);
+			for(var i=0;i<trs.length;i++){
+			trs[i].style.backGroundColor = (i%2 == 0) ? 'yellow' : 'green';
+			}
+	</script>
+</html>

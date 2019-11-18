@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<META charset="UTF-8"/>
+<head>
+	<style>
+	
+	</style>
+	<script src = "js/util.js"></script>
+</head>
+<body>
+	
+			<input type='text' name='num1'/>
+			<select>
+				<option>+</option>
+				<option>-</option>
+				<option>*</option>
+				<option>/</option>
+			</select></td>
+			<input type='text' name='num2'/>=
+			<input type='text' name='result'/>				
+</body>
+
+	<script>
+		var oper = $('select')[0];
+		oper.onchange = function(){
+			var result;
+			var num1 = $('input[name=num1]')[0].value;
+			var num2 = $('input[name=num2]')[0].value;
+			var op = this.value;
+			switch(op){
+			case '+':
+				result = num1 - -num2;
+				break;
+			case '-':
+				result = num1-num2;
+				break;
+			case '*':
+				result = num1*num2;
+				break;
+			case '/':
+				result = num1/num2;
+				break;
+			}
+			$('input[name=result]')[0].value = result;
+		}
+	
+
+
+	</script>
+
+</html>

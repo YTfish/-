@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<META charset="UTF-8"/>
+<head>
+	<style>
+		#img{
+			position: absolute;
+			width: 25px;
+		}
+	</style>
+	<script src = "js/util.js"></script>
+</head>
+<body>
+	<input type='text' name='uname'/><br/><br/><br/>
+	<input type='text' name='pass'/><br/><br/><br/>
+	
+	
+	
+</body>
+
+	<script>
+
+		var uname = $('input[name=pass]')[0];
+		uname.onblur = function(){
+			var val = trim(this.value);
+			if(!val){
+				alert('不能为空');
+			}
+		}
+
+
+	</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<META charset="UTF-8"/>
+<head>
+	<style>
+	
+	</style>
+	<script src = "js/util.js"></script>
+</head>
+<body>
+	
+	<a href="/user/remove.do?id=100">删除</a>
+	
+	
+</body> 
+	<script>
+		
+		setTimeout(function(){
+			//location = "http://news.baidu.com";
+		},4000)
+		
+		var t = setInterval(function(){
+			$('a')[0].innerHTML = new Date().toLocaleString();
+		},1000)
+
+		$('a')[0].onclick = function(){
+			return confirm('确定删除吗？');
+		}
+
+		$('a')[0].onmouseover = function(){
+			clearInterval(t);  
+		}
+
+	</script>
+</html>

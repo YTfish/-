@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<META charset="UTF-8"/>
+<head>
+	<style>
+	
+	</style>
+	<script src = "js/util.js"></script>
+</head>
+<body>
+	
+	<canvas id = 'canvas' width ='700' height='700'/></canvas>
+	
+</body> 
+	<script>
+		var canvas = $('#canvas');
+		var ctx = canvas[0].getContext('2d');
+
+	
+		ctx.beginPath();
+		
+		ctx.fillStyle = 'red';
+		ctx.arc(100,100,50,0,2*Math.PI,true);
+		ctx.stroke();
+		ctx.fill();
+	
+		
+		ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+		ctx.fillRect(200,200,100,50);
+
+		
+		ctx.beginPath(); //开始画线
+		ctx.lineWidth = 10;
+		ctx.strokeStyle = "green";//设置线的颜色
+		ctx.moveTo(0, 0); //设置起点
+		ctx.lineTo(0, 500); //移动到某点
+		ctx.lineTo(500, 500); //移动到某点
+		ctx.lineTo(500, 0); //移动到某点
+		ctx.lineTo(0, 0); //移动到某点
+		ctx.stroke(); //画出该线条
+		ctx.closePath(); //停止画线
+		
+
+	</script>
+</html>

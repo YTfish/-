@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<META charset="UTF-8"/>
+<head>
+	<style>
+	div{width:300px;height:200px;border:1px pink solid;
+	background-color:yellow;padding:30px}
+	</style>
+</head>
+<body>
+	<div>
+		<h2>学生信息管理系统-用户登录</h2>
+		<form>
+			<table>
+				<tr>
+					<td>登录名:</td>
+					<td><input type="text" placeholder="请输入登录名"/></td>
+				</tr>
+				<tr>
+					<td>登录密码：</td>
+					<td><input type="password" placeholder="请输入登录密码"/></td>
+				</tr>
+				<tr>
+					<td colspan=2 align="center">
+						<input type="reset">
+						<input type="submit" value="登录">
+					</td>
+					
+				</tr>
+			</table>	
+		</form>
+	</div>
+	
+</body>
+
+</html>

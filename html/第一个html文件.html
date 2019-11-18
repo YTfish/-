@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head><!-- head里放编码方式，样式，脚本，关键字，描述，标题 -->
+	</head>
+	<style>
+		table{
+			border-collapse:collapse;
+		}
+		th{
+			background:#6c96bf;
+			color:#333;
+
+		}
+		td{
+			border:1px solid blue;
+			width:100px;
+			height:30px;
+		}
+
+		th,td{
+			padding:8px;
+			border-color:grey;
+			border-width:1px;
+			border-style:solid;
+			width:100px;
+			height:30px;
+		}
+	</style>
+	<body><!-- 具体内容 -->
+		<!-- 文字 -->
+		我的第一个html文档<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+
+		<!-- 图片 -->
+		网络图片：<br/> <img 
+		src = "http://pic51.nipic.com/file/20141025/8649940_220505558734_2.jpg" 
+		width = "400"  ><br/><br/><br/><br/>
+
+		本地图片：<br/><img
+		src = "C:\Users\john\Pictures\Saved Pictures\111.jpg" width = "400"><br/><br/><br/><br/><br/>
+
+		<!-- 视频 -->
+		本地视频 ：<br/><video controls = "controls" loop = "loop"  
+		height="500" width="500">
+		<source src = "mp4\demo.mp4"   type = "video/mp4" />
+		</video><br/><br/><br/><br/><br/>
+
+		网络视频 ：
+		<br/><video controls = "controls" loop = "loop"  height="500" width="500">
+		<source src = "https://apd-ded77ce2d7313d580ce1151a76b9be1f.v.smtcdns.com/om.tc.qq.com/ABTsZnC2LBSKf-oVVnr2q30zmMu26WzBzZJGWY-hOAW4/uwMROfz2r57CIaQXGdGnC2deB3dMjwJ3j2-b08CjaiSNycAH/szg_60623732_50001_6c9d0cad18a64ebe89f4648fc2b463e9.f622.mp4?sdtfrom=v1010&guid=b32dce05462a59504235067e6196dad1&vkey=5CDE2700FAD5F6C84A9134C65F1779C50F854ED790D24F1DAFC45A12B89462EEA9C4744A1A76B1FB26F8E842FA6AC285AAF7C2172752DE91E2EA82585A9810952FD92777B8719B7B4C4534819E46DC247C2E8B0698DE8B1939E6646DA904A05529614A9FC4D22B414E6C028D9A80F937865D9477E699EF255B854064AEA974BE" 
+		type = "video/mp4" />
+		</video><br/><br/><br/><br/><br/>
+		
+		<!-- 音乐 -->
+		本地音乐：
+		<audio
+		src = "mp3/demo.mp3" controls = "controls">
+		</audio><br/><br/><br/><br/>
+
+		网络音乐：
+		<audio
+		src = "http://ws.stream.qqmusic.qq.com/C400002E3MtF0IAMMY.m4a?guid=879363510&vkey=2CEB37380C5CF0A333F7BEA765E2ACC28B9CAEB6BE36C1E18B78908DFF421E2E88D1CB6F7317E259697395AFBC50D853E04374C2377A1605&uin=7940&fromtag=66" controls = "controls">
+		</audio><br/><br/><br/><br/>
+
+		<!-- 超链接 -->
+		<br/>
+		<a href = " http://news.baidu.com" target = "_blank">百度新闻
+		</a><br/><br/><br/><br/>
+		<a href = " http://news.ifeng.com" target = "_blank">凤凰新闻
+		</a><br/><br/><br/><br/>
+		<a href = " https://apd-ded77ce2d7313d580ce1151a76b9be1f.v.smtcdns.com/om.tc.qq.com/ABTsZnC2LBSKf-oVVnr2q30zmMu26WzBzZJGWY-hOAW4/uwMROfz2r57CIaQXGdGnC2deB3dMjwJ3j2-b08CjaiSNycAH/szg_60623732_50001_6c9d0cad18a64ebe89f4648fc2b463e9.f622.mp4?sdtfrom=v1010&guid=b32dce05462a59504235067e6196dad1&vkey=5CDE2700FAD5F6C84A9134C65F1779C50F854ED790D24F1DAFC45A12B89462EEA9C4744A1A76B1FB26F8E842FA6AC285AAF7C2172752DE91E2EA82585A9810952FD92777B8719B7B4C4534819E46DC247C2E8B0698DE8B1939E6646DA904A05529614A9FC4D22B414E6C028D9A80F937865D9477E699EF255B854064AEA974BE" 
+		target = "_blank">一个视频
+		</a><br/><br/><br/><br/>
+		<a href = " 内嵌样式.html#music" target = "_blank">我的资讯
+		</a><br/><br/><br/><br/>
+
+		<!-- flash动画 -->
+		<embed src="flash/hly.swf" height="500" width="500" ></embed>
+
+		<!-- 自定义脚本程序 --><!--
+		<script>
+			var colors = ['red','black','blue','green','pink','purple'];
+			var body = document.getElementsByTagName('body')[0];
+			var i=0;
+			function fn(){
+				body.style.backgroundColor = colors[(i++ % colors.length)];
+			}
+			setInterval(fn,2000);
+		</script> 
+
+		<!-- 自定义块 -->
+		<DIV id="timeBar"
+		style = "width:300px;height:200px;background:blue;color:red;font-size:50px;
+		font-weigth:blod">12345</DIV>
+		<script>
+			var timeBar = document.getElementById('timeBar');
+			function fn1(){
+				timeBar.innerHTML = new Date().toLocaleString();
+			}
+			setInterval(fn1,1000);
+		</script>
+
+		<!-- 表格 -->
+		<table border = '0' cellspacing = '0'>
+			<tr>
+				<th>用户id</th>
+				<th>用户名</th>
+				<th>性别</th>
+				<th>联系电话</th>
+			</tr>
+
+			<tr>
+				<td>1000</td>
+				<td>王一</td>
+				<td colspan = '2'>女1111111</td>
+				
+			</tr>
+
+			<tr>
+				<td>1001</td>
+				<td rowspan = '2'>赵二</td>
+				<td>女</td>
+				<td>2222222</td>
+			</tr>
+
+			<tr>
+				<td>1002</td>
+				
+				<td>男</td>
+				<td>3333333</td>
+			</tr>
+
+		</table>
+
+		<!-- 表单 -->
+	</body>
+</html>

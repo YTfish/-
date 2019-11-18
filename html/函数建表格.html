@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<HTML>
+<META charset="UTF-8"/>
+<HEAD>
+	<style>
+			table{
+				border:10px  solid black;
+				border-collapse:collapse;
+			}
+			tr{
+				width:400px;
+				height:50px;
+			}
+			td{
+				border:1px solid pink;
+				width:100px;
+				height:50px;
+			}
+	</style>
+	<script src = "js/util.js"></script>
+</HEAD>
+<BODY>
+	<input type="text" id="uname">
+	<button>显示值</button>
+</BODY>
+	<SCRIPT>
+		var body = $('body')[0];
+		var table = $('<table>');
+		body.appendChild(table);
+		for(var i=0 ; i<4 ; i++){
+			var tr = $('<tr>');
+			for(var j = 0 ; j < 4 ; j++){
+				var td = $('<td>');
+				td.innerHTML = i + ',' + j;
+				tr.appendChild(td);
+			}
+			table.appendChild(tr);
+		}
+
+		
+		$('button')[0].onclick = function(){
+			var uname = $('#uname')[0].value;
+			alert('原始长度' + uname.length);
+			alert('去除左右空格后长度' + trim(uname).length);
+		}
+			
+	</SCRIPT>
+
+</HTML>

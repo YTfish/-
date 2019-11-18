@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<META charset="UTF-8"/>
+<head>
+	<style>
+		div{
+			border:1px solid pink;
+			width:200px;
+			height:200px;
+		}
+	</style>
+	<script src = "js/util.js"></script>
+</head>
+<body>
+	<div></div>
+
+</body>
+
+	<script>
+		function singleColor(){
+			var c=Math.ceil(Math.random()*255);
+			var hex = '';
+			while(true){
+				var r = c % 16;
+				switch(r){
+					case 10: hex = 'A' + hex;
+					break;
+					case 11: hex = 'B' + hex;
+					break;
+					case 12: hex = 'C' + hex;
+					break;
+					case 13: hex = 'D' + hex;
+					break;
+					case 14: hex = 'E' + hex;
+					break;
+					case 15: hex = 'F' + hex;
+					break;
+					default:
+						hex = r + hex; 
+				}
+				c = Math.floor(c / 16) ;
+				if(c == 0){
+					break;
+				}
+			}
+			if(hex.length == 1){
+				hex = '0' + hex;
+			}
+			return hex;
+		}
+
+		function getRandColor(){
+			var r = singleColor();
+			var g = singleColor();
+			var b = singleColor();			
+			return '#'+ r + g + b;
+		}
+		
+		$('div')[0].onclick = function(){
+			this.style.backgroundColor = getRandColor();
+		}
+	
+
+
+	</script>
+
+</html>

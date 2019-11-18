@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<META charset="UTF-8"/>
+<head>
+	<style>
+		div{
+			width:100px;
+			height:100px;
+			border:1px solid pink;
+		}
+
+		.ok{
+			background:green;
+			color:#fff;
+		}
+		.no{
+			background:red;
+			color:#fff;
+		}
+	</style>
+	<script src = "js/util.js"></script>
+</head>
+<body>
+	<div id='msg'></div>
+	<input type='text' id='keyword'/>
+	
+</body>
+	<script>
+		var keyword = $('#keyword')[0];
+		keyword.onkeyup=function(){
+			var email = this.value;
+			if(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.(com|cn|org|net|edu)$/.test(email)){
+				$('#msg')[0].className = 'ok';
+				$('#msg')[0].innerHTML = 'correct';
+			}else{
+				$('#msg')[0].className = 'no';
+				$('#msg')[0].innerHTML = 'wrong';
+			}
+		}
+
+	</script>
+</html>

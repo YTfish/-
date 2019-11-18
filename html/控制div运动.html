@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<META charset="UTF-8"/>
+<head>
+	<style>
+		div{
+			width:100px;
+			height:100px;
+			background:grey;
+			top:100px;
+			left:100px;
+			position:absolute;
+		}
+
+	</style>
+	<script src = "js/jquery-1.3.2.min.js"></script>
+</head>
+<body>
+	<div></div>
+	<br/><br/><br/><br/>
+	<br/><br/><br/><br/>
+	<br/><br/><br/><br/>
+	<br/><br/><br/><br/>
+	<hr/>
+	<span id='dir'></span>
+</body> 
+
+	<script>
+		var div = $('div');
+		var step = 15;
+
+		$(document).keyup(function(e){
+			var dir;
+			switch(e.keyCode){
+			case 37:
+				dir='左';
+				div.css('left',div.offset().left - step)
+				break;
+			case 38:
+				dir='上';
+				div.css('top',div.offset().top - step)
+				break;
+			case 39:
+				dir='右';
+				div.css('left',div.offset().left + step)
+				break;
+			case 40:
+				dir='下';
+				div.css('top',div.offset().top + step)
+				break;
+			}
+			$('#dir').html(dir);
+		})
+
+		
+	</script>
+</html>

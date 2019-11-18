@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<META charset="UTF-8"/>
+<head>
+	<style>
+		#canvas{
+			border:1px solid purple;
+		}
+	</style>
+	<script src = "js/util.js"></script>
+</head>
+<body>
+	
+	<canvas id = 'canvas' width='800' height='600'  /></canvas><br/><hr/>
+	<input type='color' id='color'/>
+	<input type='range' id='range' min='2' max='20'/>
+	<input type='text' id='size' size=2/>
+	<button id='eraser'>橡皮</button>
+	<button id='line'>作图</button>
+	<button id='clear'>清空</button>
+
+	
+</body> 
+	<script>
+		var canvas = $('#canvas');
+		var ctx = canvas[0].getContext('2d');
+
+		var painting = false;
+		var eraser = $('#eraser')[0];
+		var line = $('#line')[0];
+		var clear = $('#clear')[0];
+
+		$('#range')[0].onchange = function(){
+			$('#size')[0].value = this.value;
+		}
+		
+		//作图功能
+		line.onclick = function(){
+			//开始画画，设置起点
+			canvas[0].onmousedown = function(e){
+				painting = true;	
+				var p_x = e.clientX ;
+				var p_y = e.clientY ;
+				ctx.beginPath();
+				ctx.lineWidth = $('#range')[0].value;
+				ctx.strokeStyle = $('#color')[0].value;
+				ctx.moveTo(p_x, p_y);	
+			}
+
+			//画画
+			canvas[0].onmousemove = function(e){
+				if(painting){
+					var x = e.clientX ;
+					var y = e.clientY ;
+					ctx.lineTo(x, y);
+					ctx.stroke(); 
+				} 
+			}
+				
+			//停止画画
+			canvas[0].onmouseup = function(e){ 
+				painting = false;
+				ctx.closePath();
+			}
+		}
+		
+		//擦除功能
+		eraser.onclick = function(){
+					
+			canvas[0].onmousedown = function(e){
+				painting = true;	
+				var p_x = e.clientX ;
+				var p_y = e.clientY ;
+				ctx.beginPath();
+				ctx.lineWidth = $('#range')[0].value;
+				ctx.strokeStyle = 'white';
+				ctx.moveTo(p_x, p_y);	
+			}
+
+			canvas[0].onmousemove = function(e){
+				if(painting){
+					var x = e.clientX ;
+					var y = e.clientY ;
+					ctx.lineTo(x, y);
+					ctx.stroke(); 
+				} 
+			}
+
+			canvas[0].onmouseup = function(e){ 
+				painting = false;
+				ctx.closePath();
+			}
+		}
+
+		//清空功能
+		clear.onclick = function(){
+		
+			ctx.beginPath(); //开始画线
+			ctx.lineWidth = canvas[0].height * 2;
+			ctx.strokeStyle = "white";//设置线的颜色
+			console.log(canvas[0].height);
+			console.log(canvas[0].width);
+			ctx.moveTo(canvas[0].offsetLeft, canvas[0].offsetTop); //设置起点
+			ctx.lineTo(canvas[0].offsetLeft + canvas[0].width, canvas[0].offsetTop ); //移动到某点
+			ctx.stroke(); //画出该线条
+			ctx.closePath(); //停止画线
+	
+			/*ctx.clearRect(canvas[0].offsetLeft,canvas[0].offsetTop,canvas[0].width,canvas[0].height);*/
+		}
+
+	</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<META charset="UTF-8"/>
+<head>
+	<style>
+		table{
+			width:300px;
+			height:300px;
+			
+		}
+		td{
+			width:150px;
+			height:30px;
+			border:1px solid blue;
+			color:grey;
+		}
+		.cl1{
+			width:150px;
+			height:30px;
+			background:yellow;
+		}
+
+		.cl2{
+			width:150px;
+			height:30px;
+			background:yellow;
+		}
+
+		.bigDiv{
+			width:300px;
+			height:300px;
+			background:grey;
+		}
+
+	</style>
+	<script src = "js/jquery-1.3.2.min.js"></script>
+</head>
+<body>
+
+	<div class='bigDiv' id='div1'><br/><br/>
+		<div class='cl1'></div>	<br/><br/>
+
+		<div class='cl1'></div>	<br/><br/>
+
+		<div class='cl1'></div> <br/><br/>
+
+		<div class='cl1'></div> 
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div class='bigDiv' id='div1'><br/><br/>
+		<div class='cl2'></div>
+	</div>
+	
+</body> 
+	<script>
+		$('.cl1').click(function(){
+			var me = $(this);
+			var divs = $('.cl2');
+			me.insertAfter(divs);
+		});
+
+	</script>
+</html>
